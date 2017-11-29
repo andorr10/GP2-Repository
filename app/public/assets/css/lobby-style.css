@@ -14,11 +14,24 @@
 }
 
 .start-btn{
-    
+
 }
 
 .logout-btn{
     margin: 1%;
     margin-left:-33%;
-    
+
+}
+
+.userStatus{
+  height: 40px;
+  width: 40px;
+  border:solid;
+  float: right;
+  visibility: hidden;
+}
+
+#user1ready{
+  object-fit: contain;
+  visibility: visible;
 }
