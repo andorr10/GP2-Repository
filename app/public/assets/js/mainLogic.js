@@ -9,47 +9,45 @@ var currentPosition;
 var updatePropertyName = [];
 /*get request sent to api routes requesting */
 
-playersInfo();
 
 /*==============================================================================
 -------------------------   Load Board Places  ---------------------------------
 ===============================================================================*/
-$("document").ready(function(){
-var updatePropertyName = [];
-  $.ajax({
-    method: "GET",
-    url: "/",
-    data: {}
+
+function loadBoard(){
+  $.get("/property").then(function(response){
+    updatePropertyName = response;
+    // for (var i=0; i< updatePropertyName.length; i++){
+    //   console.log("DB Propert " + i + " is " + updatePropertyName[i].name);
+    // }
+    $(".name-2").text(updatePropertyName[1].name);
+    $(".name-4").text(updatePropertyName[3].name);
+    $(".name-7").text(updatePropertyName[6].name);
+    $(".name-9").text(updatePropertyName[7].name);
+    $(".name-10").text(updatePropertyName[9].name);
+    $(".name-12").text(updatePropertyName[11].name);
+    $(".name-14").text(updatePropertyName[13].name);
+    $(".name-15").text(updatePropertyName[14].name);
+    $(".name-17").text(updatePropertyName[16].name);
+    $(".name-19").text(updatePropertyName[18].name);
+    $(".name-20").text(updatePropertyName[19].name);
+    $(".name-22").text(updatePropertyName[21].name);
+    $(".name-24").text(updatePropertyName[23].name);
+    $(".name-25").text(updatePropertyName[24].name);
+    $(".name-27").text(updatePropertyName[26].name);
+    $(".name-28").text(updatePropertyName[27].name);
+    $(".name-30").text(updatePropertyName[29].name);
+    $(".name-32").text(updatePropertyName[31].name);
+    $(".name-33").text(updatePropertyName[32].name);
+    $(".name-35").text(updatePropertyName[34].name);
+    $(".name-38").text(updatePropertyName[37].name);
+    $(".name-40").text(updatePropertyName[39].name);
+    $(".name-6").text(updatePropertyName[5].name);
+    $(".name-16").text(updatePropertyName[15].name);
+    $(".name-26").text(updatePropertyName[25].name);
+    $(".name-36").text(updatePropertyName[35].name);
   });
-
-  $(".name-2").text(updatePropertyName[0]);
-  $(".name-4").text(updatePropertyName[1]);
-  $(".name-7").text(updatePropertyName[2]);
-  $(".name-9").text(updatePropertyName[3]);
-  $(".name-10").text("Should Be Connecticut");
-  $(".name-12").text(updatePropertyName[5]);
-  $(".name-14").text(updatePropertyName[6]);
-  $(".name-15").text(updatePropertyName[7]);
-  $(".name-17").text(updatePropertyName[8]);
-  $(".name-19").text(updatePropertyName[9]);
-  $(".name-20").text(updatePropertyName[10]);
-  $(".name-22").text(updatePropertyName[11]);
-  $(".name-24").text(updatePropertyName[12]);
-  $(".name-25").text(updatePropertyName[13]);
-  $(".name-27").text(updatePropertyName[14]);
-  $(".name-28").text(updatePropertyName[15]);
-  $(".name-30").text(updatePropertyName[16]);
-  $(".name-32").text(updatePropertyName[17]);
-  $(".name-33").text(updatePropertyName[18]);
-  $(".name-35").text(updatePropertyName[19]);
-  $(".name-38").text(updatePropertyName[20]);
-  $(".name-40").text(updatePropertyName[21]);
-  $(".name-6").text(updatePropertyName[22]);
-  $(".name-16").text(updatePropertyName[23]);
-  $(".name-26").text(updatePropertyName[24]);
-  $(".name-36").text(updatePropertyName[25]);
-});
-
+}
 /*==============================================================================
 -------------------------Move the Active Player---------------------------------
 ===============================================================================*/
@@ -483,3 +481,6 @@ for (i = 0; i < userInfo.length; i++) {
     }
   };
 }
+
+playersInfo();
+loadBoard();
