@@ -6,10 +6,49 @@ var p2Info;
 var p3Info;
 var p4Info;
 var currentPosition;
+var updatePropertyName = [];
 /*get request sent to api routes requesting */
 
 playersInfo();
 
+/*==============================================================================
+-------------------------   Load Board Places  ---------------------------------
+===============================================================================*/
+$("document").ready(function(){
+var updatePropertyName = [];
+  $.ajax({
+    method: "GET",
+    url: "/",
+    data: {}
+  });
+
+  $(".name-2").text(updatePropertyName[0]);
+  $(".name-4").text(updatePropertyName[1]);
+  $(".name-7").text(updatePropertyName[2]);
+  $(".name-9").text(updatePropertyName[3]);
+  $(".name-10").text("Should Be Connecticut");
+  $(".name-12").text(updatePropertyName[5]);
+  $(".name-14").text(updatePropertyName[6]);
+  $(".name-15").text(updatePropertyName[7]);
+  $(".name-17").text(updatePropertyName[8]);
+  $(".name-19").text(updatePropertyName[9]);
+  $(".name-20").text(updatePropertyName[10]);
+  $(".name-22").text(updatePropertyName[11]);
+  $(".name-24").text(updatePropertyName[12]);
+  $(".name-25").text(updatePropertyName[13]);
+  $(".name-27").text(updatePropertyName[14]);
+  $(".name-28").text(updatePropertyName[15]);
+  $(".name-30").text(updatePropertyName[16]);
+  $(".name-32").text(updatePropertyName[17]);
+  $(".name-33").text(updatePropertyName[18]);
+  $(".name-35").text(updatePropertyName[19]);
+  $(".name-38").text(updatePropertyName[20]);
+  $(".name-40").text(updatePropertyName[21]);
+  $(".name-6").text(updatePropertyName[22]);
+  $(".name-16").text(updatePropertyName[23]);
+  $(".name-26").text(updatePropertyName[24]);
+  $(".name-36").text(updatePropertyName[25]);
+});
 
 /*==============================================================================
 -------------------------Move the Active Player---------------------------------

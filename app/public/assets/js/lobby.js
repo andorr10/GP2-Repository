@@ -12,21 +12,21 @@ $(document).ready(function(){
   });
 
 
-  $("#citySearch").click(function(){
-    var value = $("#cityName").val();
-    console.log(value);
-    $.ajax({
-      type: "GET",
-      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + value + "&sensor=false&key=AIzaSyDije1gHJ-JpNUMGPBbZl8Fq8c9tsu3COk",
-      dataType: "json",
-      success: processJSON
-    });
-
-    function processJSON(json) {
-      console.log(json);
-      playerReady(player1ready);
-    }
-  });
+  // $("#citySearch").click(function(){
+  //   var value = $("#cityName").val();
+  //   console.log(value);
+  //   $.ajax({
+  //     type: "GET",
+  //     url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + value + "&sensor=false&key=AIzaSyDije1gHJ-JpNUMGPBbZl8Fq8c9tsu3COk",
+  //     dataType: "json",
+  //     success: processJSON
+  //   });
+  //
+  //   function processJSON(json) {
+  //     console.log(json);
+  //     playerReady(player1ready);
+  //   }
+  // });
 
  function updateMove(move) {
   // console.log(move);
@@ -38,9 +38,9 @@ $(document).ready(function(){
    // console.log("finished")
   );
 }
-function playerReady(player){
+function playerReady(player) {
   player = true;
-  console.log("Player status " + player);
+  console.log("Player status: " + player);
 }
 
 

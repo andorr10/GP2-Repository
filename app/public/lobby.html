@@ -404,7 +404,7 @@
                      arr.push('B&O Railroad');
                      arr.push('Short Line Railroad');
                   }
-
+                  setTimeout(addCityProperty(arr), 5000);
                   //======================================
                   //----This block is for testing (make sure it's in the last function)
                   //========================================
@@ -416,6 +416,18 @@
                   //======================================
 
                   //BEFORE POOPING OUT ARRAY TO THE NEXT PERSON CHECK IT'S THE CORRECT SIZE
+
+                  //  Below will have code to send update db ajax post
+                  function addCityProperty(arrayInfo){
+                    //for (var i = 0, i <arrayInfo, i++){
+                    $.ajax({
+                                type: 'PUT',
+                                url: '/city',
+                                data: {array:arrayInfo},
+                                dataType: 'json'
+                            });
+                        }
+                  //}
 
             }
 
@@ -433,6 +445,7 @@
             //     infowindow.open(map, this);
             //   });
             // }
+      // close of click function is directly below
                });
          });
          }
